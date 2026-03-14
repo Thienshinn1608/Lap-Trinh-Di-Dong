@@ -100,7 +100,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   padding: const EdgeInsets.all(25.0),
                   child: Column(
                     children: [
-                      // Tiêu đề "Exercises"
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
