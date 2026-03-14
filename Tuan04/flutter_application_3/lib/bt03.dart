@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'UI Clone',
-      theme: ThemeData(fontFamily: 'Roboto'), // Bạn có thể tùy chỉnh font
+      title: 'Demo',
+      theme: ThemeData(fontFamily: 'Roboto'),
       home: const DashboardScreen(),
     );
   }
@@ -31,18 +31,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[700], // Màu nền chính của nửa trên
-      // Sử dụng SafeArea để tránh app bị lẹm vào tai thỏ/thanh trạng thái
+      backgroundColor: Colors.blue[700], 
       body: SafeArea(
         bottom: false,
         child: Column(
           children: [
-            // --- PHẦN 1: HEADER MÀU XANH ---
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
               child: Column(
                 children: [
-                  // Thanh Search
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.blue[600],
@@ -61,7 +58,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  // Chữ "How do you feel?" và Icon 3 chấm
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -77,7 +73,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ],
                   ),
                   const SizedBox(height: 25),
-                  // Row chứa 4 khuôn mặt cảm xúc
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -92,12 +87,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             const SizedBox(height: 10),
 
-            // --- PHẦN 2: DANH SÁCH BÀI TẬP MÀU XÁM ---
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
-                  // Bo góc tròn 2 cạnh ở trên
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -122,7 +115,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      // Danh sách các bài tập lướt được
                       Expanded(
                         child: ListView(
                           children: const [
@@ -156,7 +148,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
 
-      // --- BOTTOM NAVIGATION BAR ---
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
@@ -180,7 +171,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 }
 
-// Widget tái sử dụng cho các biểu tượng cảm xúc
 class EmotionFace extends StatelessWidget {
   final String emotion;
   final String label;
@@ -212,7 +202,6 @@ class EmotionFace extends StatelessWidget {
   }
 }
 
-// Widget tái sử dụng cho từng dòng bài tập
 class ExerciseTile extends StatelessWidget {
   final IconData icon;
   final Color color;
@@ -242,7 +231,6 @@ class ExerciseTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Icon với nền màu
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
@@ -252,7 +240,6 @@ class ExerciseTile extends StatelessWidget {
                   child: Icon(icon, color: Colors.white),
                 ),
                 const SizedBox(width: 16),
-                // Text
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
